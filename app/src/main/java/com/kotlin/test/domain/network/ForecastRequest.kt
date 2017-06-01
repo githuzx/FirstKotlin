@@ -1,5 +1,6 @@
 package com.kotlin.test.domain.network
 
+import android.util.Log
 import com.google.gson.Gson
 import com.kotlin.test.domain.bean.ForecastBean
 import java.net.URL
@@ -19,6 +20,10 @@ class ForecastRequest(val zipCode: String) {
 
     fun execute(): ForecastBean.ForecastResult {
         val forecastJsonStr = URL(COMPLETE_URL + zipCode).readText()
+
+        Log.e("------","-------")
+        Log.e("------","-------")
+        Log.e("jsonStr",forecastJsonStr)
         return Gson().fromJson(forecastJsonStr, ForecastBean.ForecastResult::class.java)
     }
 }

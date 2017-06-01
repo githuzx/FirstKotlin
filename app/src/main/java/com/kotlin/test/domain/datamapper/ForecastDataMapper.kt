@@ -1,8 +1,8 @@
 package com.kotlin.test.domain.datamapper
 
-import android.icu.text.DateFormat
-import com.kotlin.test.domain.model.ForecastD
 import com.kotlin.test.domain.bean.ForecastBean
+import com.kotlin.test.domain.model.ForecastD
+import java.text.DateFormat
 import java.util.*
 import com.kotlin.test.domain.model.ForecastD.Forecast as ModelForecast
 
@@ -22,12 +22,16 @@ public class ForecastDataMapper {
 
     private fun convertForecastItemToDomain(forecast: ForecastBean.Forecast): ForecastD.Forecast {
         return ForecastD.Forecast(convertDate(forecast.dt),
-                forecast.weather[0].description, forecast.temp.max.toInt(),
-                forecast.temp.min.toInt())
+                forecast.weather[0].description,
+                forecast.temp.max.toInt(),
+                forecast.temp.min.toInt(),
+                generateIconUrl(forecast.weather[0].icon))
     }
 
     private fun convertDate(date: Long): String {
         val df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault())
         return df.format(date * 1000)
     }
+
+    private fun generateIconUrl(iconCode:String):String="http://openweathermap.org/img/w/$iconCode.png"
 }

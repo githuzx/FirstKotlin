@@ -6,11 +6,14 @@ package com.kotlin.test.domain.model
 class ForecastD {
     data class ForecastList(val city: String,
                             val country: String,
-                            val detailForecast: List<Forecast>
-    )
+                            val dailyForecast: List<Forecast>){
+        operator fun get(position:Int):Forecast=dailyForecast[position]
+        fun size():Int=dailyForecast.size
+    }
 
     data class Forecast(val date: String,
                         val description: String,
                         val high: Int,
-                        val low: Int)
+                        val low: Int,
+                        val iconUrl:String)
 }
