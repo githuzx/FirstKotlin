@@ -8,7 +8,7 @@ import com.kotlin.test.domain.network.ForecastRequest
 /**
  * Created by Administrator on 2017/5/31.
  */
-class RequestForecastCommand(val zipCode: String) : Command<ForecastD.ForecastList> {
+class RequestForecastCommand(private val zipCode: String) : Command<ForecastD.ForecastList> {
 
     override fun execute(): ForecastD.ForecastList {
         val forecastRequest = ForecastRequest(zipCode)

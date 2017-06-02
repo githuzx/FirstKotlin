@@ -9,7 +9,7 @@
     android:padding="@dimen/spacing_xlarge">
 
     <ImageView
-        android:id="@+id/item_icon"
+        android:id="@+id/icon"
         android:layout_width="48dp"
         android:layout_height="48dp"
         tools:src="@mipmap/ic_launcher" />
@@ -23,14 +23,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/item_date"
+            android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="May 14, 2015" />
 
         <TextView
-            android:id="@+id/item_description"
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -45,14 +45,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/item_maxTemperature"
+            android:id="@+id/maxTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="30" />
 
         <TextView
-            android:id="@+id/item_minTemperature"
+            android:id="@+id/minTemperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption"

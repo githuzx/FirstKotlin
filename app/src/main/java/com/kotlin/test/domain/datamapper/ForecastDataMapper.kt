@@ -9,7 +9,7 @@ import com.kotlin.test.domain.model.ForecastD.Forecast as ModelForecast
 /**
  * Created by Administrator on 2017/5/31.
  */
-public class ForecastDataMapper {
+class ForecastDataMapper {
     fun convertFromDataModel(forecast: ForecastBean.ForecastResult): ForecastD.ForecastList {
         return ForecastD.ForecastList(forecast.city.name, forecast.city.country,
                 convertForecastListToDomain(forecast.list)) //result list
@@ -33,5 +33,5 @@ public class ForecastDataMapper {
         return df.format(date * 1000)
     }
 
-    private fun generateIconUrl(iconCode:String):String="http://openweathermap.org/img/w/$iconCode.png"
+    private fun generateIconUrl(iconCode: String): String = "http://openweathermap.org/img/w/$iconCode.png"
 }
