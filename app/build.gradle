@@ -12,6 +12,11 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+
+        //开启jack编译
+        jackOptions {
+            enabled=true
+        }
     }
     buildTypes {
         release {
@@ -19,8 +24,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    //将编译选项设置为Java1.8
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
