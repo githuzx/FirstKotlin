@@ -8,7 +8,7 @@ import com.kotlin.test.R
 import com.kotlin.test.domain.command.RequestForecastCommand
 import com.kotlin.test.ui.adapter.ForecastListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.async
+import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         forecastList.layoutManager = LinearLayoutManager(this)
-        async {
+        doAsync {
             val result = RequestForecastCommand("94043").execute()
             uiThread {
                 val adapter = ForecastListAdapter(result) { toast(it.date) }
