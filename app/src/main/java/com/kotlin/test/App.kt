@@ -4,7 +4,7 @@ import android.app.Application
 import kotlin.properties.Delegates
 
 /**
- * Created by Administrator on 2017/5/31.
+ * Created by Administrator on 2017/7/17.
  */
 class App : Application() {
 
